@@ -1,6 +1,6 @@
 # ggtrendline: an R package for adding trendline and confidence interval to ggplot
 
-<a href="https://sm.ms/image/JGF8MWVbRwh2X17" target="_blank"><img src="https://s2.loli.net/2022/04/13/JGF8MWVbRwh2X17.png" width="200" height="200" align="right"></a>
+<a href="https://sm.ms/image/JGF8MWVbRwh2X17" target="_blank"><img src="https://s2.loli.net/2022/04/13/JGF8MWVbRwh2X17.png" height="300" align="right"></a>
 
 [![cran version](http://www.r-pkg.org/badges/version/basicTrendline)](http://cran.rstudio.com/web/packages/ggtrendline) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/ggtrendline)](https://github.com/metacran/cranlogs.app)
