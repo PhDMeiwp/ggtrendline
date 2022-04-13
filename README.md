@@ -26,32 +26,32 @@ You can install directly **from GitHub** if you have the devtools package instal
  **[case 1]** line2P example,default
     ggtrendline(x, y, model = "line2P")  
 
-<img src="docs/images/line2P.png" width="490"/> 
+<a href="https://sm.ms/image/JOrRHYWGy8EMofs" target="_blank"><img src="https://s2.loli.net/2022/04/13/JOrRHYWGy8EMofs.png" ></a>
 
-<img src="docs/images/summary.png" width="490"/> 
+<a href="https://sm.ms/image/4pICPTDh2gJxuFK" target="_blank"><img src="https://s2.loli.net/2022/04/13/4pICPTDh2gJxuFK.png" ></a>
 
  **[case 2]** line3P example, add geom_point()
     ggtrendline(x, y, model = "line3P") + geom_point(aes(x, y)) + theme_bw()
 
-<img src="docs/images/line3P.png" width="490"/> 
+<a href="https://sm.ms/image/Dp6Lt58jf9rmaNW" target="_blank"><img src="https://s2.loli.net/2022/04/13/Dp6Lt58jf9rmaNW.png" ></a>
 
  **[case 3]** log2P example, CI lines only, without CI filling
     ggtrendline(x, y, model = "log2P", CI.fill = NA) + geom_point(aes(x, y))+ theme_classic() 
 	
-<img src="docs/images/log2P.png" width="490"/> 
+<a href="https://sm.ms/image/VuDypF3tZWzK9B5" target="_blank"><img src="https://s2.loli.net/2022/04/13/VuDypF3tZWzK9B5.png" ></a>
 
  **[case 4]**  exp2P example, set the regression line and geom_point()
     ggtrendline(x, y, model = "exp2P", linecolor = "blue", linetype = 1, linewidth = 1) + 
              geom_point(aes(x, y), color = "blue", shape = 1, size = 3)  
 
-<img src="docs/images/exp2P.png" width="490"/>	
+<a href="https://sm.ms/image/TF48LAtiIHB1ukd" target="_blank"><img src="https://s2.loli.net/2022/04/13/TF48LAtiIHB1ukd.png" ></a>
 		
  **[case 5]** exp3P example, set confidence interval
     ggtrendline(x, y, model = "exp3P", CI.level = 0.99, 
                 CI.fill = "red", CI.alpha = 0.1, CI.color = NA, CI.lty = 2, CI.lwd = 1.5) + 
              geom_point(aes(x, y)) 
 
-<img src="docs/images/exp3P.png" width="490"/>
+<a href="https://sm.ms/image/6ul7toUOWkhcw3s" target="_blank"><img src="https://s2.loli.net/2022/04/13/6ul7toUOWkhcw3s.png" ></a>
 
 ## Details
 To see more details, you can run the following R code if you have the "ggtrendline" package installed:
