@@ -2,9 +2,7 @@
 
 <a href="https://sm.ms/image/JGF8MWVbRwh2X17" target="_blank"><img src="https://s2.loli.net/2022/04/13/JGF8MWVbRwh2X17.png" height="300" align="right"></a>
 
-[![cran version](http://www.r-pkg.org/badges/version/basicTrendline)](http://cran.rstudio.com/web/packages/ggtrendline) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/ggtrendline)](https://github.com/metacran/cranlogs.app)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ggtrendline)](https://github.com/metacran/cranlogs.app)
 
 ## 1. Installing "ggtrendline" package in R
 
