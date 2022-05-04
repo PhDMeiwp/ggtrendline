@@ -88,24 +88,30 @@ The 'ggtrendline' package is developed for adding **trendline and confidence int
 ### 3.2 ggtrendline function
 
 The built-in 'ggtrendline()' function includes the following models:<br>
-<br>"line2P", formula as: y=a\*x+b;
-<br>"line3P", y=a\*x^2+b\*x+c;
-<br>"log2P" , y=a\*ln(x)+b; 
-<br>"exp2P", y=a\*exp(b\*x); 
-<br>"exp3P", y=a\*exp(b\*x)+c;
-<br>"power2P", y=a\*x^b;
-<br>"power3P", y=a\*x^b+c.
+<br>"line2P", formula as: y = a\*x + b;
+<br>"line3P", y = a\*x^2 + b\*x + c;
+<br>"log2P" , y = a\*ln(x) + b; 
+<br>"exp2P", y = a\*exp(b\*x); 
+<br>"exp3P", y = a\*exp(b\*x) + c;
+<br>"power2P", y = a\*x^b;
+<br>"power3P", y = a\*x^b + c.
 
 ### 3.3 stat_eq and stat_rrp functions
 
 **The built-in 'stat_eq()' and 'stat_rrp()' functions can be used separately, i.e., not together with 'ggtrendline()' function.**
 
-
 To see more details, you can run the following R code if you have the "ggtrendline" package installed:
 
     library(ggtrendline)
     ?ggtrendline
+	?stat_eq
+	?stat_rrp
 
 ## 4. Contact
+
 - Bugs and feature requests can be filed to https://github.com/PhDMeiwp/ggtrendline/issues. 
 - BTW, [Pull requests](https://github.com/PhDMeiwp/ggtrendline/pulls) are also welcome.
+
+## 5. Acknowledgements
+
+We would like to express our special thanks to **Uwe Ligges, Gregor Seyer, and CRAN team** for their valuable comments to the 'ggtrendline' package.
