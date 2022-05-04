@@ -9,16 +9,16 @@
 
 - Get the released version from CRAN:
 
-	 install.packages("ggtrendline")
+		install.packages("ggtrendline")
 
 - Or the development version from Github:
 
-	 install.packages("devtools")
-	 library(devtools)  
+		install.packages("devtools")
+		library(devtools)  
 	 
-	 install_github("PhDMeiwp/ggtrendline@master", force = TRUE)
+		install_github("PhDMeiwp/ggtrendline@master", force = TRUE)
 	 
-	 library(ggtrendline)
+		library(ggtrendline)
 
 
 ## 2. Using "ggtrendline" package
@@ -83,27 +83,29 @@
 ### 3.1 Description
 
 The 'ggtrendline' package is developed for adding **trendline and confidence interval** of **linear or nonlinear regression** model, and
-    **showing equation, R square, and P value**  to 'ggplot' as simple as possible. For a general overview of the methods used in this package, 
+    **showing equation, R square, and P value**  to 'ggplot' as simple as possible. 
+
+<br>For a general overview of the methods used in this package, 
 	see Ritz and Streibig (2008) <doi:10.1007/978-0-387-09616-2> and 
 	Greenwell and Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.
 
 ### 3.2 ggtrendline function
 
-The built-in 'ggtrendline()' function includes the following models:
-"line2P" (formula as: y=a*x+b), 
-"line3P" (y=a*x^2+b*x+c), 
-"log2P" (y=a*ln(x)+b), 
-"exp2P" (y=a*exp(b*x)), 
-"exp3P" (y=a*exp(b*x)+c), 
-"power2P" (y=a*x^b), 
-and "power3P" (y=a*x^b+c).
+The built-in 'ggtrendline()' function includes the following models:<br>
+<br>"line2P" (formula as: y=a*x+b), 
+<br>"line3P" (y=a*x^2+b*x+c), 
+<br>"log2P" (y=a*ln(x)+b), 
+<br>"exp2P" (y=a*exp(b*x)), 
+<br>"exp3P" (y=a*exp(b*x)+c), 
+<br>"power2P" (y=a*x^b), 
+<br>and "power3P" (y=a*x^b+c).
 
 ### 3.3 stat_eq and stat_rrp functions
 
-*The built-in 'stat_eq()' and 'stat_rrp()' functions can be used separately, i.e., not together with 'ggtrendline()' function.*
+**The built-in 'stat_eq()' and 'stat_rrp()' functions can be used separately, i.e., not together with 'ggtrendline()' function.**
 
 
-To see more details, you can run the following R code **if you have the "ggtrendline" package installed**:
+To see more details, you can run the following R code if you have the "ggtrendline" package installed:
 
     library(ggtrendline)
     ?ggtrendline
