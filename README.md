@@ -14,10 +14,7 @@
 - Or the development version from Github:
 
 		install.packages("devtools")
-		library(devtools)  
-	 
-		install_github("PhDMeiwp/ggtrendline@master", force = TRUE)
-	 
+		devtools::install_github("PhDMeiwp/ggtrendline@master", force = TRUE)
 		library(ggtrendline)
 
 
@@ -45,7 +42,8 @@
 
 ### 2.3 CI lines only, without CI filling
 
-     ggtrendline(x, y, model = "log2P", CI.fill = NA) + geom_point(aes(x, y))+ theme_classic() 
+     ggtrendline(x, y, model = "log2P", CI.fill = NA) + 
+			geom_point(aes(x, y))+ theme_classic() 
 	
 <a href="https://sm.ms/image/VuDypF3tZWzK9B5" target="_blank"><img src="https://s2.loli.net/2022/04/13/VuDypF3tZWzK9B5.png" ></a>
 
@@ -71,9 +69,7 @@
 		data("iris")
 		x <- iris$Petal.Width
 		y <- iris$Petal.Length
-		
 		group <- iris$Species
-		
 		ggtrendline(x,y,"exp3P") + geom_point(aes(x,y,color=group))
 
 <a href="https://sm.ms/image/MYa9WHqlALfFXeD" target="_blank"><img src="https://s2.loli.net/2022/05/04/MYa9WHqlALfFXeD.png" ></a>
@@ -92,13 +88,13 @@ The 'ggtrendline' package is developed for adding **trendline and confidence int
 ### 3.2 ggtrendline function
 
 The built-in 'ggtrendline()' function includes the following models:<br>
-<br>"line2P" (formula as: y=a*x+b), 
-<br>"line3P" (y=a*x^2+b*x+c), 
-<br>"log2P" (y=a*ln(x)+b), 
-<br>"exp2P" (y=a*exp(b*x)), 
-<br>"exp3P" (y=a*exp(b*x)+c), 
-<br>"power2P" (y=a*x^b), 
-<br>and "power3P" (y=a*x^b+c).
+<br>"line2P", formula as: y=a\*x+b;
+<br>"line3P", y=a\*x^2+b\*x+c;
+<br>"log2P" , y=a\*ln(x)+b; 
+<br>"exp2P", y=a\*exp(b\*x); 
+<br>"exp3P", y=a\*exp(b\*x)+c;
+<br>"power2P", y=a\*x^b;
+<br>"power3P", y=a\*x^b+c.
 
 ### 3.3 stat_eq and stat_rrp functions
 
