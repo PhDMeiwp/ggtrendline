@@ -6,6 +6,7 @@
 #' @param predictor  a numeric vector of values at which to evaluate the model.
 #' @param a,b The numeric parameters responding to the exp2P model.
 #' @export
+#' @return  No return value (called for side effects).
 #' @examples
 #' library(ggtrendline)
 #' x<-1:5

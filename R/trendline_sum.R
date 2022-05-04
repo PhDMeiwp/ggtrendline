@@ -1,17 +1,16 @@
 #' Summarized Results of Each Regression Model
 #'
-#' Summarizing the results of linear or nonlinear regression model which built in the 'ggtrendline()' function. The function includes the following models in the latest version:
-#' "line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), "log2P" (y=a*ln(x)+b), "exp2P" (y=a*exp(b*x)),"exp3P" (y=a*exp(b*x)+c), "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+#' Summarizing the results of linear or nonlinear regression model which built in the 'ggtrendline()' function. The function includes the following models:\cr
+#' "line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 #'
-#' @param x,y  the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.
+#' @param x,y  the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.
 #' @param model select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c
-#' @param Pvalue.corrected if P-value corrected or not, the vlaue is one of c("TRUE", "FALSE").
+#' @param Pvalue.corrected if P-value corrected or not, the value is one of c("TRUE", "FALSE").
 #' @param summary summarizing the model fits. Default is TRUE.
 #' @param eDigit the numbers of digits for summarized results. Default is 3.
 #' @import stats
-#' @import AICcmodavg
 #' @export
-#' @details The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, \cr while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is workful for non-linear regression only.\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
+#' @details The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, \cr while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is workful for non-linear regression only.\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
 #' @note If the output of 'AICc' is 'Inf', not an exact number, please try to expand the sample size of your dataset to >=6.
 #'
 #' @return R^2, indicates the R-Squared value of each regression model.
@@ -19,7 +18,7 @@
 #' @return N, indicates the sample size.
 #' @return AIC, AICc, or BIC, indicate the Akaike's Information Criterion (AIC), the second-order AIC (AICc) for small samples, or Bayesian Information Criterion (BIC) for fitted model. Click \code{\link[stats]{AIC}} for details. The smaller the AIC, AICc or BIC, the better the model.
 #' @return RSS, indicate the value of "Residual Sum of Squares".
-#' 
+#'
 #' @examples
 #' library(ggtrendline)
 #' x <- c(1, 3, 6, 9,  13,   17)
@@ -46,6 +45,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
     Pvalue.corrected=TRUE
 
     formula = 'y = a*x + b'
+    npar = 3
 
     fit<- lm(y~x)
     sum.line2P <- summary(fit)
@@ -83,6 +83,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
     Pvalue.corrected=TRUE
 
     formula = 'y = a*x^2 + b*x + c'
+    npar = 4
 
     fit<-lm(y~I(x^2)+x)
 
@@ -125,6 +126,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
     Pvalue.corrected=TRUE
 
     formula = 'y = a*ln(x) + b'
+    npar = 3
 
     yadj<-y-min(y) #adjust
 
@@ -173,6 +175,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
   if (model== c("exp2P"))
   {
     formula = 'y = a*exp(b*x)'
+    npar = 3
 
     n=length(x)
     k = 2     # k means the count numbers of parameters(i.e., 'a', 'b' and 'c' in this case)
@@ -254,6 +257,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
   if (model== c("exp3P"))
   {
     formula = 'y = a*exp(b*x) + c'
+    npar = 4
 
     yadj<-y-min(y)+1
     zzz<-data.frame(x,yadj)
@@ -356,6 +360,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
   if (model== c("power2P"))
   {
     formula = 'y = a*x^b'
+    npar = 3
 
     n<-length(x)
     k =  2  # k means the count numbers of parameters (i.e., a, b and c in this case)
@@ -448,6 +453,7 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
   if (model== c("power3P"))
   {
     formula = 'y = a*x^b + c'
+    npar = 4
 
     yadj<-y-min(y)+1
     zzz<-data.frame(x,yadj)
@@ -566,8 +572,11 @@ trendline_sum <- function(x,y,model="line2P", Pvalue.corrected=TRUE, summary=TRU
   AIC = as.numeric(format(AIC(fit), digits = eDigit))
   BIC = as.numeric(format(BIC(fit), digits = eDigit))
   ss.res=as.numeric(format(ss.res, digits = eDigit))
-  if (requireNamespace("AICcmodavg", quietly = TRUE)){
-    AICc = as.numeric(format(AICcmodavg::AICc(fit), digits = eDigit))}
+
+  logLik.fit <- stats::logLik(fit)
+  logLik.fit <- logLik.fit[1]
+  AICc = -2*logLik.fit+2*npar*(nrow/(nrow-npar-1))
+  AICc = as.numeric(format(AICc, digits = eDigit))
 
   if (summary==TRUE){
     ##print N, AIC, AICc, BIC and RSS

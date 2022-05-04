@@ -1,10 +1,10 @@
 #' Add Trendline and Confidence Interval to 'ggplot'
 #'
-#' Add trendline and confidence interval of linear or nonlinear regression model to ggplot,
-#' by using different models built in the 'ggtrendline()' function. \cr The function includes the following models in the latest version:\cr
-#' "line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+#' Add trendline and confidence interval of linear or nonlinear regression model to 'ggplot',
+#' by using different models built in the 'ggtrendline()' function. \cr The function includes the following models:\cr
+#' "line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 #'
-#' @param x,y  the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.
+#' @param x,y  the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.
 #' @param model select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c
 #'
 #' @param linecolor the color of regression line. Default is "black".
@@ -38,8 +38,15 @@
 #' @import stats
 #' @import ggplot2
 #' @export
-#' @return NULL
+#' @return  No return value (called for side effects).
 #' @details The values of each parameter of regression model can be found by typing \code{\link{trendline_sum}} function in this package.\cr\cr The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).
+#'
+#' @references
+#' Ritz C., and Streibig J. C. (2007)
+#' \emph{Nonlinear Regression with R}. Springer.
+#'
+#' Greenwell B. M., and Schubert Kabban C. M. (2014)
+#' \emph{investr: An R Package for Inverse Estimation}. The R Journal, 6(1), 90-100.
 #'
 #' @examples
 #' # library(ggplot2)

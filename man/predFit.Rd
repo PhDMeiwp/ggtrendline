@@ -48,6 +48,9 @@ Default is \code{FALSE}.}
 a confidence/prediction interval. Only needed when
 \code{adjust = "Bonferroni"}.}
 }
+\value{
+No return value (called for side effects).
+}
 \description{
 Generic prediction method for various types of fitted models. \code{predFit}
 can be used to obtain standard errors of fitted values and
@@ -55,7 +58,7 @@ adjusted/unadjusted confidence/prediction intervals for objects of class
 \code{"lm"}, \code{"nls"}.
 }
 \note{
-predFit funtion is from 'investr' package written by Brandon M. Greenwell.
+predFit function is from 'investr' package written by Brandon M. Greenwell.
 }
 \references{
 Greenwell B. M., and Schubert-Kabban, C. M. (2014)

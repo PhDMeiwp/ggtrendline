@@ -11,6 +11,9 @@ SSexp2P(predictor, a, b)
 
 \item{a, b}{The numeric parameters responding to the exp2P model.}
 }
+\value{
+No return value (called for side effects).
+}
 \description{
 This selfStart model evaluates the power regression function (formula as: y=a*exp(b*x)). It has an initial attribute that will evaluate initial estimates of the parameters 'a' and 'b' for a given set of data.
 }

@@ -1,10 +1,10 @@
 #' Add Equation to 'ggplot'
 #'
-#' Add regression equation to ggplot,
-#' by using different models built in the 'ggtrendline()' function. The function includes the following models in the latest version:
-#' "line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), "log2P" (y=a*ln(x)+b), "exp2P" (y=a*exp(b*x)),"exp3P" (y=a*exp(b*x)+c), "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+#' Add regression equation to 'ggplot',
+#' by using different models built in the 'ggtrendline()' function. The function includes the following models: \cr
+#' "line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 #'
-#' @param x,y  the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.
+#' @param x,y  the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.
 #' @param model select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c
 #' @param show.eq whether to show the regression equation, the value is one of c("TRUE", "FALSE").
 #' @param xname to specify the expression of "x" in equation, i.e., expression('x'), see Examples.
@@ -16,8 +16,8 @@
 #' @param eSize  font size of equation. Default is 3.
 #' @import ggplot2
 #' @export
-#' @return NULL
-#'
+#' @return  No return value (called for side effects).
+#' @details The values of each parameter of regression model can be found by typing \code{\link{trendline_sum}} function in this package.\cr\cr The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).
 #'
 #' @seealso  \code{\link{ggtrendline}}, \code{\link{stat_rrp}}, \code{\link{trendline_sum}}
 
@@ -156,7 +156,7 @@ if (model== "power3P")
 \"model\" should be one of c(\"lin2P\",\"line3P\",\"log2P\",\"exp2P\",\"exp3P\",\"power2P\",\"power3P\").")
 }
 
-### add equation to ggplot
+### add equation to 'ggplot'
   startx <- min(x)+(max(x)-min(x))*0.1
   starty <- max(y)+(max(y)-min(y))*0.1
   if (is.null(eq.x)) eq.x = startx else eq.x = eq.x

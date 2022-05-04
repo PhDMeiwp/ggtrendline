@@ -37,7 +37,7 @@ ggtrendline(
 )
 }
 \arguments{
-\item{x, y}{the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.}
+\item{x, y}{the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.}
 
 \item{model}{select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c}
 
@@ -87,10 +87,13 @@ ggtrendline(
 
 \item{xlab, ylab}{labels of x- and y-axis.}
 }
+\value{
+No return value (called for side effects).
+}
 \description{
-Add trendline and confidence interval of linear or nonlinear regression model to ggplot,
-by using different models built in the 'ggtrendline()' function. \cr The function includes the following models in the latest version:\cr
-"line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+Add trendline and confidence interval of linear or nonlinear regression model to 'ggplot',
+by using different models built in the 'ggtrendline()' function. \cr The function includes the following models:\cr
+"line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 }
 \details{
 The values of each parameter of regression model can be found by typing \code{\link{trendline_sum}} function in this package.\cr\cr The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).
@@ -108,6 +111,13 @@ ggtrendline(x, y, model = "exp2P", linecolor = "blue", linetype = 1, linewidth =
 ggtrendline(x, y, model = "exp3P", CI.level = 0.99,
             CI.fill = "red", CI.alpha = 0.1, CI.color = NA, CI.lty = 2, CI.lwd = 1.5) # set CI
 
+}
+\references{
+Ritz C., and Streibig J. C. (2007)
+\emph{Nonlinear Regression with R}. Springer.
+
+Greenwell B. M., and Schubert Kabban C. M. (2014)
+\emph{investr: An R Package for Inverse Estimation}. The R Journal, 6(1), 90-100.
 }
 \seealso{
 \code{\link{ggtrendline}}, \code{\link{stat_eq}}, \code{\link{stat_rrp}}, \code{\link{trendline_sum}}, \code{\link[stats]{nls}}, \code{\link[stats]{selfStart}}

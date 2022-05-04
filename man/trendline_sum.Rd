@@ -14,11 +14,11 @@ trendline_sum(
 )
 }
 \arguments{
-\item{x, y}{the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.}
+\item{x, y}{the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.}
 
 \item{model}{select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c}
 
-\item{Pvalue.corrected}{if P-value corrected or not, the vlaue is one of c("TRUE", "FALSE").}
+\item{Pvalue.corrected}{if P-value corrected or not, the value is one of c("TRUE", "FALSE").}
 
 \item{summary}{summarizing the model fits. Default is TRUE.}
 
@@ -36,11 +36,11 @@ AIC, AICc, or BIC, indicate the Akaike's Information Criterion (AIC), the second
 RSS, indicate the value of "Residual Sum of Squares".
 }
 \description{
-Summarizing the results of linear or nonlinear regression model which built in the 'ggtrendline()' function. The function includes the following models in the latest version:
-"line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), "log2P" (y=a*ln(x)+b), "exp2P" (y=a*exp(b*x)),"exp3P" (y=a*exp(b*x)+c), "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+Summarizing the results of linear or nonlinear regression model which built in the 'ggtrendline()' function. The function includes the following models:\cr
+"line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 }
 \details{
-The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, \cr while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is workful for non-linear regression only.\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
+The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, \cr while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is workful for non-linear regression only.\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr\cr If "Pvalue.corrected = TRUE", the P-vlaue is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
 }
 \note{
 If the output of 'AICc' is 'Inf', not an exact number, please try to expand the sample size of your dataset to >=6.

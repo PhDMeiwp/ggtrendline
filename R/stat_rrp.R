@@ -1,10 +1,10 @@
 #' Add R square and P-value to 'ggplot'
 #'
-#' Add R-square and P-value of regression models to ggplot,
-#' by using models built in the 'ggtrendline()' function. The function includes the following models in the latest version:
-#' "line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), "log2P" (y=a*ln(x)+b), "exp2P" (y=a*exp(b*x)),"exp3P" (y=a*exp(b*x)+c), "power2P" (y=a*x^b), and "power3P" (y=a*x^b+c).
+#' Add R-square and P-value of regression models to 'ggplot',
+#' by using models built in the 'ggtrendline()' function. The function includes the following models: \cr
+#' "line2P" (formula as: y=a*x+b), \cr  "line3P" (y=a*x^2+b*x+c), \cr "log2P" (y=a*ln(x)+b), \cr "exp2P" (y=a*exp(b*x)), \cr  "exp3P" (y=a*exp(b*x)+c), \cr "power2P" (y=a*x^b), \cr and "power3P" (y=a*x^b+c).
 #'
-#' @param x,y  the x and y arguments provide the x and y coordinates for the ggplot. Any reasonable way of defining the coordinates is acceptable.
+#' @param x,y  the x and y arguments provide the x and y coordinates for the 'ggplot'. Any reasonable way of defining the coordinates is acceptable.
 #' @param model select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp2P", "exp3P", "power2P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp2P": y=a*exp(b*x) \cr "exp3P": y=a*exp(b*x)+c \cr "power2P": y=a*x^b \cr "power3P": y=a*x^b+c
 #' @param Pvalue.corrected if P-value corrected or not, the value is one of c("TRUE", "FALSE").
 #' @param show.Rsquare whether to show the R-square, the value is one of c("TRUE", "FALSE").
@@ -17,19 +17,8 @@
 #' @param eSize  font size of R square and P value. Default is 3.
 #' @import ggplot2
 #' @export
-#' @return NULL
-#'
-#' @details The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, \cr while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is only valid for non-linear regression.\cr\cr If "Pvalue.corrected = TRUE", the P-value is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr If "Pvalue.corrected = FALSE", the P-value is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
-#' @note
-#' Confidence intervals for nonlinear regression (i.e., objects of class
-#' \code{nls}) are based on the linear approximation described in Bates & Watts (2007) and Greenwell & Schubert-Kabban (2014).
-#'
-#' @references
-#' Bates, D. M., and Watts, D. G. (2007)
-#' \emph{Nonlinear Regression Analysis and its Applications}. Wiley.
-#'
-#' Greenwell B. M., and Schubert-Kabban, C. M. (2014)
-#' \emph{investr: An R Package for Inverse Estimation}. The R Journal, 6(1), 90-100.
+#' @return  No return value (called for side effects).
+#' @details The values of each parameter of regression model can be found by typing \code{\link{trendline_sum}} function in this package.\cr\cr The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, while the nonlinear models (exp2P, exp3P, power2P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).\cr\cr The argument 'Pvalue.corrected' is only valid for non-linear regression.\cr\cr If "Pvalue.corrected = TRUE", the P-value is calculated by using "Residual Sum of Squares" and "Corrected Total Sum of Squares (i.e. sum((y-mean(y))^2))".\cr\cr If "Pvalue.corrected = FALSE", the P-value is calculated by using "Residual Sum of Squares" and "Uncorrected Total Sum of Squares (i.e. sum(y^2))".
 #'
 #' @seealso  \code{\link{ggtrendline}}, \code{\link{stat_eq}}, \code{\link{trendline_sum}}
 
@@ -70,7 +59,7 @@ stat_rrp <- function(x, y, model="line2P", Pvalue.corrected = TRUE,
 \"model\" should be one of c(\"lin2P\",\"line3P\",\"log2P\",\"exp2P\",\"exp3P\",\"power2P\",\"power3P\").")
 
 
-### add R square and P value to ggplot
+### add R square and P value to 'ggplot'
   startx <- min(x)+(max(x)-min(x))*0.1
   starty <- max(y)
   if (is.null(rrp.x)) rrp.x = startx else rrp.x = rrp.x

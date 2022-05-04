@@ -2,13 +2,16 @@
 
 <a href="https://sm.ms/image/JGF8MWVbRwh2X17" target="_blank"><img src="https://s2.loli.net/2022/04/13/JGF8MWVbRwh2X17.png" height="300" align="right"></a>
 
+[![cran version](http://www.r-pkg.org/badges/version/ggtrendline)](http://cran.rstudio.com/web/packages/ggtrendline) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/ggtrendline)](https://github.com/metacran/cranlogs.app)
 
 ## 1. Installing "ggtrendline" package in R
 
-### from Github 
+- Get the released version from CRAN:
 
-You can install directly **from GitHub** if you have the devtools package installed:
+	install.packages("ggtrendline")
+
+- Or the development version from Github:
 
      install.packages("devtools")
 	 library(devtools)  
@@ -60,6 +63,20 @@ You can install directly **from GitHub** if you have the devtools package instal
              geom_point(aes(x, y)) 
 
 <a href="https://sm.ms/image/6ul7toUOWkhcw3s" target="_blank"><img src="https://s2.loli.net/2022/04/13/6ul7toUOWkhcw3s.png" ></a>
+		
+### [case 6] one trendline with different points belonged to multiple groups.
+
+		library(ggplot2)
+		library(ggtrendline)
+		data("iris")
+		x <- iris$Petal.Width
+		y <- iris$Petal.Length
+		
+		group <- iris$Species
+		
+		ggtrendline(x,y,"exp3P") + geom_point(aes(x,y,color=group))
+
+<a href="https://sm.ms/image/MYa9WHqlALfFXeD" target="_blank"><img src="https://s2.loli.net/2022/05/04/MYa9WHqlALfFXeD.png" ></a>
 
 ## 3. Details
 To see more details, you can run the following R code if you have the "ggtrendline" package installed:

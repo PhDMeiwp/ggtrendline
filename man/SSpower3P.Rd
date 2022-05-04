@@ -11,6 +11,9 @@ SSpower3P(predictor, a, b, c)
 
 \item{a, b, c}{Three numeric parameters responding to the exp3P model.}
 }
+\value{
+No return value (called for side effects).
+}
 \description{
 This selfStart model evaluates the power regression function (formula as: y=a*x^b+c). It has an initial attribute that will evaluate initial estimates of the parameters a, b, and c for a given set of data.
 }

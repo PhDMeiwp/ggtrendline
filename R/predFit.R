@@ -25,8 +25,8 @@
 #'   are used.
 #'
 #' @export
-#'
-#' @note predFit funtion is from 'investr' package written by Brandon M. Greenwell.
+#' @return  No return value (called for side effects).
+#' @note predFit function is from 'investr' package written by Brandon M. Greenwell.
 #'
 #' @references
 #' Greenwell B. M., and Schubert-Kabban, C. M. (2014)

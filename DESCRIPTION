@@ -1,13 +1,25 @@
 Package: ggtrendline
-Version: 1.0.1
-Date: 2022-04-13
-Title: Add Trendline and Confidence Interval to "ggplot""
-Author: Weiping Mei, Guangchuang Yu, Brandon M. Greenwell, Yu Umezawa, Jun Zeng, Jun Wang
+Version: 1.0.3
+Date: 2022-04-24
+Title: Add Trendline and Confidence Interval to 'ggplot'
+Authors@R: c(
+		person("Weiping", "Mei", role = c("aut", "cre", "cph"), email = "meiweipingg@163.com"),
+		person("Guangchuang", "Yu", role = "aut"),
+		person("Brandon M.", "Greenwell", role = "aut"),
+		person("Jiangshan", "Lai", role = "ctb"),
+		person("Zhendu", "Mao",   role = "ctb"),
+		person("Yu", "Umezawa",  role = "ctb"),
+		person("Jun", "Zeng",  role = "ctb"),
+		person("Jun", "Wang",  role = "ctb")
+	   )
 Maintainer: Weiping Mei <meiweipingg@163.com>
-Description: Add trendline and confidence interval of regression model and show equation to ggplot as simple as possible.
+Description: Add trendline and confidence interval of linear or nonlinear regression model and
+    show equation to 'ggplot' as simple as possible. For a general overview of the methods used in
+	  this package, see Ritz and Streibig (2008) <doi:10.1007/978-0-387-09616-2> and 
+	  Greenwell and Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.
 Depends: R (>= 3.5.2)
-Imports: stats, ggplot2, AICcmodavg
-Suggests: investr
+Imports: stats, ggplot2
+Suggests: investr, AICcmodavg
 BugReports: https://github.com/PhDMeiwp/ggtrendline/issues
 License: GPL-3
 URL: https://github.com/PhDMeiwp/ggtrendline
